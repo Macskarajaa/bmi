@@ -16,6 +16,7 @@
             color: white;
             align-items: center;
             height: 300px;
+            border-radius: 20px;
           
         }
         #gomb1{
@@ -41,7 +42,10 @@
             color: white;
             width: auto;
             margin: 0 auto;
+            
         }
+        
+
         #weight{
             border: 2px solid #5959ef;
             justify-content: center;
@@ -52,6 +56,7 @@
             margin: auto;
             background-color: rgb(104, 193, 222);
             color: black;
+            outline: none;
         }
         #height{
             border: 2px solid #5959ef;
@@ -63,6 +68,7 @@
             margin: auto;
             background-color: rgb(104, 193, 222);
             color: black;
+            outline: none;
         }
         p{
             margin: auto;
@@ -78,16 +84,18 @@
         <div class="row justify-content-center">
             <div class="col-md-12 holder m-2">
                 <p>weight<sub>(kg)</sub></p>
-                <input type="text" id="weight">    
+                <input type="text" id="weight" placeholder="Your weight">    
             </div>
             
             <div class="col-md-12 holder m-2">
                 <p>height<sub>(cm)</sub></p> 
-                <input type="text" id="height">   
+                <input type="text" id="height" placeholder="Your height"> 
+                
             </div>  
         </div>
         <div class="row ">
                 <input type="button" id="gomb1" value="Calculate" onclick="szamol()">
+                
                 <input type="button" id="gomb2" value="Clear" onclick="myclear()">
         </div>
         <div class="row">    
@@ -106,7 +114,7 @@
     
 
         function szamol(){
-            let weight = +document.getElementById("weight").value
+            const weight = document.getElementById("weight").value
             let height = +document.getElementById("height").value
             let bmi = (weight/(height/100)**2).toFixed(2)
             console.log(bmi)
